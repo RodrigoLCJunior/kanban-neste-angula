@@ -1,0 +1,43 @@
+<form [formGroup]="form" (ngSubmit)="onCreateTodo()">
+
+  <h2>Crie um novo Card</h2>
+
+  <mat-form-field>
+    <label for="title">Titulo</label>
+    <input id="title" matInput placeholder="Insira um titulo" formControlName="title">
+    <mat-error *ngIf="title.touched && title.hasError('required')">Titulo é obrigatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label for="subTitle">Subtitulo</label>
+    <input id="subTitle" matInput placeholder="Insira um Subtitulo" formControlName="subTitle">
+    <mat-error *ngIf="subTitle.touched && subTitle.hasError('required')">Subtitulo é obrigatorio</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label for="text">Descricao</label>
+    <input id="text" matInput placeholder="Insira um texto" formControlName="text">
+    <mat-error *ngIf="text.touched && text.hasError('required')"></mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label>Complexidade</label>
+    <mat-select formControlName="complexity">
+      <mat-option *ngFor="let c of complexityValues" [value]="c">{{c}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label>Status</label>
+    <mat-select formControlName="status">
+      <mat-option *ngFor="let s of statusValues" [value]="s">{{s}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-hint *ngIf="!form.valid">Preencha corretamente:)</mat-hint>
+
+  <div>
+    <button mat-button type="submit" [disabled]="!form.valid">Criar</button>
+  </div>
+
+</form>

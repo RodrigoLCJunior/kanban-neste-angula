@@ -1,0 +1,47 @@
+<div cdkDropListGroup style="margin: 50px;">
+
+  <div>
+    <h2>Ações</h2>
+    <button mat-button color="primary" (click)="onShowCreateTodoDialog()">Criar um Card...</button>
+  </div>
+
+  <mat-divider style="margin-top: 2rem; margin-bottom: 3rem;"></mat-divider>
+
+  <div class="list-container">
+    <h2>A Fazer</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="backlogItems"
+      class="list"
+      (cdkDropListDropped)="drop($event)">
+      <app-card class="todo-item" *ngFor="let item of backlogItems" cdkDrag [item]="item" ></app-card>
+    </div>
+  </div>
+
+  <div class="list-container">
+    <h2>Em Progresso</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="todoItems"
+      class="list"
+      (cdkDropListDropped)="drop($event)">
+      <app-card class="todo-item" *ngFor="let item of todoItems" cdkDrag [item]="item" ></app-card>
+    </div>
+  </div>
+
+  <div class="list-container">
+    <h2>Concluido</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="doneItems"
+      class="list"
+      (cdkDropListDropped)="drop($event)">
+      <app-card class="todo-item" *ngFor="let item of doneItems" cdkDrag [item]="item" ></app-card>
+    </div>
+  </div>
+
+
+</div>

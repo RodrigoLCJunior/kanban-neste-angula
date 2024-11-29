@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 80px auto; /* Centraliza horizontalmente */
+  padding: 20px;
+  background-color: #f4f4f4; /* Fundo suave */
+  border-radius: 12px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 400px;
+
+  .login {
+    margin-bottom: 30px;
+    font-size: 1.5rem; /* Tamanho maior */
+    color: #333; /* Cor escura para o título */
+  }
+
+  mat-card {
+    background-color: #ffffff; /* Fundo branco do card */
+    border-radius: 8px; /* Bordas suaves */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    mat-card-content {
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px; /* Espaçamento entre os elementos */
+
+        mat-form-field {
+          width: 100%;
+          min-width: 350px;
+          background-color: #fafafa; /* Fundo leve para inputs */
+          border-radius: 5px;
+        }
+
+        .button {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 20px;
+
+          button {
+            background-color: #6200ea; /* Cor primária (roxo) */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+              background-color: #3700b3; /* Cor mais escura no hover */
+            }
+          }
+        }
+      }
+    }
+  }
+}
