@@ -21,7 +21,7 @@
 
 # Como Usar
 
-# Iniciação
+* Iniciação
 - Precisa ter o Docker desktop aberto
 - docker compose up -d
 - cd todo-api
